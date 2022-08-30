@@ -299,5 +299,10 @@ namespace ResourceMonitor.Components
                 Destroy(rmd);
             }
         }
+
+        public bool IsDeconstructionObstacle()
+        {
+            return true;
+        }
     }
 }

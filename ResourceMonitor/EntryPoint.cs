@@ -1,5 +1,5 @@
 ﻿using System;
-using Harmony;
+using HarmonyLib;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -25,7 +25,7 @@ namespace ResourceMonitor
         [QModPatch]
         public static void Entry()
         {
-            var harmony = HarmonyInstance.Create("taylor.brett.ResourceMonitor.mod");
+            var harmony = new Harmony("taylor.brett.ResourceMonitor.mod");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
             new Game_Items.ResourceMonitorScreenLarge().Patch();
             new Game_Items.ResourceMonitorScreenSmall().Patch();
